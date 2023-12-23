@@ -1,0 +1,28 @@
+.title {
+    text-align: center;
+    margin-top: 25px;
+  }
+  
+  .subtitle {
+    text-align: center;
+  }
+  
+  .btn-outline-primary {
+    color: rgb(0, 6, 43);
+    border-color: rgb(0, 6, 43);
+  }
+  
+  .btn-outline-primary:hover {
+    color: rgb(238, 238, 238) !important;
+    background-color: rgb(0, 6, 43) !important;
+  }
+  
+  .btn-outline-primary:active {
+    color: rgb(238, 238, 238) !important;
+    background-color: rgb(0, 6, 43) !important;
+  }
+  
+  input {
+    margin-right: 5px;
+  }
+  

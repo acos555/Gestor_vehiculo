@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row" *ngIf="vehiculos">
+      <div class="col-lg-6" *ngFor="let field of fields">
+        <span><strong>{{ field.label }}: </strong></span>
+        <span>{{ vehiculos[field.name] }}</span>
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+  

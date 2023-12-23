@@ -1,0 +1,75 @@
+.title {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.btn-outline-primary {
+  color: rgb(0, 6, 43);
+  border-color: rgb(0, 6, 43);
+}
+
+.btn-outline-primary:hover {
+  color: rgb(238, 238, 238) !important;
+  background-color: rgb(0, 6, 43) !important;
+}
+
+.btn-outline-primary:active {
+  color: rgb(238, 238, 238) !important;
+  background-color: rgb(0, 6, 43) !important;
+}
+
+input {
+  margin-right: 5px;
+}
+
+.consecutivo {
+  width: 15%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.nombre {
+  width: 10%;
+
+
+}
+table{
+  table-layout: fixed;
+}
+
+td{
+  word-wrap:break-word;
+}
+
+.descripcion {
+  width: 45%;
+  text-align: justify;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.tipo {
+  width: 10%;
+  text-align: justify;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.estado {
+  text-align: center;
+  width: 10%;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+.acciones {
+  width: 10%;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}

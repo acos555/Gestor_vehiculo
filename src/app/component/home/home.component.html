@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="title">Gestor de Vehiculos</h1>
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Registrar Propietario</div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-outline-primary"  (click)="propietario()" >Ingresa!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Registrar Vehiculo</div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-outline-primary"  (click)="vehiculo()" >Ingresa!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card-title">Consulta</div>
+                        <div class="col-lg-12">
+                            <input class="form-control" (change)="apply_filter_process($event)"
+                                placeholder="Busqueda">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-10">
+            <div class="card">
+                <table  #process_sort="matSort" matSort mat-table [dataSource]="data_source_procesos">
+                    <caption></caption>
+                    <ng-container matColumnDef="identificacion">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Identifiacion </th>
+                        <td mat-cell *matCellDef="let element" class="identificacion"> {{element.identificacion}}
+                    </ng-container>
+                    <ng-container matColumnDef="nombre">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Nombre </th>
+                        <td mat-cell *matCellDef="let element" class="nombre"> {{element.nombre}}
+                    </ng-container>
+                    <ng-container matColumnDef="apellido">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> apellido </th>
+                        <td mat-cell *matCellDef="let element" class="apellido"> {{element.apellido}}
+                    </ng-container>
+                    <ng-container matColumnDef="placa">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> placa </th>
+                        <td mat-cell *matCellDef="let element" class="placa"> {{element.placa}}
+                    </ng-container>
+                    <ng-container matColumnDef="marca">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> marca </th>
+                        <td mat-cell *matCellDef="let element" class="marca"> {{element.marca}}
+                    </ng-container>
+                    <ng-container matColumnDef="color">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> color </th>
+                        <td mat-cell *matCellDef="let element" class="color"> {{element.color}}
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+                <mat-paginator #paginator_process class="card-inside" [pageSize]="5" [pageSizeOptions]="[5, 10]"
+                showFirstLastButtons>
+                </mat-paginator>
+
+            </div>
+            <button class="btn btn-sm btn-outline-danger" (click)="dragdrop()" >DragDrop</button>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+
+    </div>
+    <div class="row">&nbsp;</div>
+</div>

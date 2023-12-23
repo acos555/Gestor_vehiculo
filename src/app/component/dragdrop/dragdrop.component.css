@@ -1,0 +1,23 @@
+/* drag-drop.component.css */
+
+.container {
+  display: flex;
+}
+
+.list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  min-height: 100px;
+}
+
+.agregados {
+  border: 1px solid green;
+  padding: 10px;
+  margin: 10px;
+  min-height: 100px;
+}
+
+div[draggable=true] {
+  cursor: move;
+}

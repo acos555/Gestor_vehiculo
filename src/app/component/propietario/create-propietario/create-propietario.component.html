@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>Nombre </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre ">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>Apellido </strong></span>
+          <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>Identificación </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="identificacion" placeholder="Identificación">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>Teléfono </strong></span>
+          <input type="text" class="form-control" formControlName="telefono" placeholder="Teléfono ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>Dirección </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="direccion" placeholder="Dirección">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>Correo </strong></span>
+          <input type="text" class="form-control" formControlName="email" placeholder="Correo ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>Fecha de Nacimiento</strong></span>
+          <div class="form-group">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" formControlName="fecha_nacimiento">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-lg-6">
+            <button class="btn btn-outline-primary" type="submit" [disabled]="!form.valid">Enviar</button>
+          </div>
+      </div>
+    </form>
+    <div class="row">&nbsp;</div>
+  </div>
+  

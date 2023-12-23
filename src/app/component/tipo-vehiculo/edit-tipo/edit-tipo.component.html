@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>Tipo vehiculo </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="tipo_vehiculo" placeholder="Tipo vehiculo ">
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <button class="btn btn-outline-primary" type="submit" [disabled]="!form.valid">Enviar</button>
+          </div>
+      </div>
+    </form>
+    <div class="row">&nbsp;</div>
+  </div>
+  

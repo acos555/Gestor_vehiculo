@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>placa </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="placa" placeholder="placa ">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>marca </strong></span>
+          <input type="text" class="form-control" formControlName="marca" placeholder="marca ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>vin </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="vin" placeholder="vin">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>linea </strong></span>
+          <input type="text" class="form-control" formControlName="linea" placeholder="linea ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>cilindrada </strong></span>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="cilindrada" placeholder="cilindrada">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span><strong>color </strong></span>
+          <input type="text" class="form-control" formControlName="color" placeholder="color ">
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>chasis </strong></span>
+          <input type="text" class="form-control" formControlName="chasis" placeholder="chasis ">
+        </div>
+        <div class="col-lg-6">
+          <span><strong>Tipo vehiculo</strong></span>
+          <select class="form-control" formControlName="tipo_vehiculo">
+            <option *ngFor="let tipo_vehiculo of tipos_vehiculos" [value]="tipo_vehiculo.id">{{tipo_vehiculo.tipo_vehiculo}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <span><strong>modelo </strong></span>
+          <input type="text" class="form-control" formControlName="modelo" placeholder="modelo ">
+        </div>
+        <div class="col-lg-6">
+            <span><strong>propietario</strong></span>
+            <select class="form-control" formControlName="propietario_identificacion">
+              <option *ngFor="let propietario of propietarios" [value]="propietario.identificacion">{{propietario.nombre}}</option>
+            </select>
+          </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="col-lg-12">
+        <button class="btn btn-outline-primary" type="submit" [disabled]="!form.valid">Enviar</button>
+      </div>
+    </form>
+    <div class="row">&nbsp;</div>
+  </div>
+  

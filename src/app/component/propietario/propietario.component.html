@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Crear propietario</div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-outline-primary" (click)="create_propietario()">Ingresa!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card-title">Consulta procesos</div>
+                        <div class="col-lg-6">
+                            <input class="form-control" (change)="apply_filter_process($event)"
+                            placeholder="Busqueda">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-10">
+            <div class="card">
+                <table #process_sort="matSort" matSort mat-table [dataSource]="data_source_procesos">
+                    <caption></caption>
+                    <ng-container matColumnDef="identificacion">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> IDENTIFICACION </th>
+                        <td mat-cell *matCellDef="let element" class="identificacion"> {{element.identificacion}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="nombre">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> NOMBRE </th>
+                        <td mat-cell *matCellDef="let element" class="nombre"> {{element.nombre}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="apellido">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> APELLIDO </th>
+                        <td class="datatable" mat-cell *matCellDef="let element" class="apellido">
+                            {{element.apellido}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="fecha_nacimiento">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> FECHA NACIMIENTO </th>
+                        <td mat-cell *matCellDef="let element" class="fecha_nacimiento"> {{element.fecha_nacimiento}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="direccion">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> DIRECCION </th>
+                        <td mat-cell *matCellDef="let element" class="direccion"> {{element.direccion}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="telefono">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> TELEFONO </th>
+                        <td mat-cell *matCellDef="let element" class="telefono"> {{element.telefono}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="email">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> EMAIL </th>
+                        <td mat-cell *matCellDef="let element" class="email"> {{element.email}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="acciones">
+                        <th class="datatable" mat-header-cell *matHeaderCellDef scope="col" class="acciones"> ACCIONES
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="acciones">
+                            <button class="btn btn-sm btn-outline-warning" (click)="editarPropietario(element.identificacion)"
+                                >Editar</button>
+                            <button class="btn btn-sm btn-outline-danger" (click)="eliminarPropietario(element.identificacion)">Eliminar</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+                <mat-paginator #paginator_process class="card-inside" [pageSize]="5" [pageSizeOptions]="[5, 10]"
+                    showFirstLastButtons>
+                </mat-paginator>
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+    <div class="row">&nbsp;</div>
+</div>

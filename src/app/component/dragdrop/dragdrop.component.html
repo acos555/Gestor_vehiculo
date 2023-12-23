@@ -1,0 +1,26 @@
+<!-- dragdrop.component.html -->
+<div class="container">
+    <div class="list" (dragover)="onDragOver($event)" (drop)="onDrop($event, propietarios)">
+      <h2>Propietarios</h2>
+      <div *ngFor="let propietario of propietarios" (dragstart)="onDragStart($event, propietario)" draggable="true">
+        {{ propietario }}
+      </div>
+    </div>
+  
+    <div class="list" (dragover)="onDragOver($event)" (drop)="onDrop($event, vehiculos)">
+      <h2>Vehículos</h2>
+      <div *ngFor="let vehiculo of vehiculos" (dragstart)="onDragStart($event, vehiculo)" draggable="true">
+        {{ vehiculo }}
+      </div>
+    </div>
+  
+    <div class="agregados" (dragover)="onDragOver($event)" (drop)="onDrop($event, agregados)">
+      <h2>Agregar</h2>
+      <div *ngFor="let agregado of agregados" (dragstart)="onDragStart($event, agregado)" draggable="true">
+        {{ agregado }}
+      </div>
+    </div>
+  </div>
+  
+  <button (click)="onAgregar()">Agregar</button>
+  
